@@ -3,10 +3,15 @@ import "./globals.css";
 import VisualEditsMessenger from "../visual-edits/VisualEditsMessenger";
 import ErrorReporter from "@/components/ErrorReporter";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "The Nook Company",
   description: "The Nook Company is building the systems that give humans leverage in a future where intelligence is everywhere and effort is not enough.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -34,9 +39,10 @@ export default function RootLayout({
           data-debug="true"
           data-custom-data='{"appName": "YourApp", "version": "1.0.0", "greeting": "hi"}'
         />
-        {children}
-        <VisualEditsMessenger />
-      </body>
+          {children}
+          <Analytics />
+          <VisualEditsMessenger />
+        </body>
     </html>
   );
 }
