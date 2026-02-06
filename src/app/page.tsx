@@ -8,7 +8,7 @@ import Footer from "@/components/sections/footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#FEFFFC]" suppressHydrationWarning>
+    <div className="min-h-screen bg-[#FEFFFC]">
       <Navigation />
       <HeroSection />
       <ProblemsScroll />
